@@ -149,4 +149,9 @@ public class PixUser implements Serializable {
         public String toString() {
 	   return ToStringBuilder.reflectionToString( this, ToStringStyle.MULTI_LINE_STYLE );
 	}
+        
+        public void addAlbum(Album album){
+        album.setUser(this);
+        getAlbums().add(album);
+        }
 }

@@ -141,4 +141,8 @@ public class Picture implements Serializable{
     public String getFileLocation(){
     return System.getProperty("webapp.root") + getLocation();
     }
+    
+    public void addComment(Comment comment){
+    comments.add(comment);
+    }
 }

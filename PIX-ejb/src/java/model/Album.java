@@ -6,7 +6,9 @@
 package model;
 
 import java.io.Serializable;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import org.apache.commons.lang.builder.ToStringBuilder;
@@ -104,8 +106,52 @@ public class Album implements Serializable{
         result = PRIME * result +((description == null) ? 0: description.hashCode());
         result = PRIME * result +((id == null) ? 0 :id.hashCode());
         result = PRIME * result + ((name == null) ? 0 : name.hashCode());
-        
+        result = PRIME * result + ((user == null) ? 0 : user.hashCode());
+        result = PRIME * result + Arrays.hashCode(labels);
+        return result;
     }
+
+@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		final Album other = (Album) obj;
+		if (creationDate == null) {
+			if (other.creationDate != null)
+				return false;
+		} else if (!creationDate.equals(other.creationDate))
+			return false;
+		if (description == null) {
+			if (other.description != null)
+				return false;
+		} else if (!description.equals(other.description))
+			return false;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		if (!Arrays.equals(labels, other.labels))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
+			return false;
+		return true;
+	}    
     
-    
+        public void addPicture(Picture pic){
+        pic.setAlbum(this);
+        pictures.add(pic);
+        }
 }
