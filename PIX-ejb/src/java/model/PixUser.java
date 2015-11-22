@@ -154,4 +154,6 @@ public class PixUser implements Serializable {
         album.setUser(this);
         getAlbums().add(album);
         }
+        
+        public void addCooment(Comment comment){}
 }
