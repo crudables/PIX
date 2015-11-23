@@ -8,6 +8,13 @@ package model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 import javax.xml.stream.events.Comment;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
@@ -16,13 +23,18 @@ import org.apache.commons.lang.builder.ToStringStyle;
  *
  * @author Ables
  */
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class PixUser implements Serializable {
+    @Id
     private String userName;
     private String firstName;
     private String lastName;
     private String email;
     private String password;
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "user")
     private List<Album> albums = new ArrayList<Album>();
+    @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private List<Comment> comments = new ArrayList<Comment>();
 
     public PixUser() {
