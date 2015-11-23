@@ -7,6 +7,8 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 /**
  *
@@ -14,7 +16,8 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Comment implements  Serializable{
-    
+    @Id
+    @GeneratedValue
     private Integer id;
     private String comment;
 

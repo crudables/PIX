@@ -5,10 +5,15 @@
  */
 package model;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+
 /**
  *
  * @author Ables
  */
+@Entity
+@DiscriminatorValue("HOLIDAY")
 public class HolidayAlbum extends Album{
 
     public HolidayAlbum() {
