@@ -5,10 +5,13 @@
  */
 package model;
 
+import javax.persistence.Entity;
+
 /**
  *
  * @author Ables
  */
+@Entity
 public class Affiliate extends PixUser{
     private String companyName;
     private String faxNumber;
