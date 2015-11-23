@@ -6,25 +6,48 @@
 package model;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 /**
  *
  * @author Ables
  */
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorValue("ALBUM")
+@DiscriminatorColumn(name="DTYPE")
+@NamedQueries({@NamedQuery(name="useralbums",query = "select a from album where a.user.username = ?1"),
+@NamedQuery(name="allalbums",query = "select a from a")
+})
 public class Album implements Serializable{
-    Integer id;
-    PixUser user;
-    String description;
-    String name;
-    Date creationDate = new Date();
-    String[] labels;
-    
+    @Id
+     @GeneratedValue
+  private  Integer id;
+   private PixUser user;
+   private String description;
+   private String name;
+   @Temporal(TemporalType.TIMESTAMP)
+   private Date creationDate = new Date();
+   private String[] labels;
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     private List<Picture> pictures  = new ArrayList<Picture>();
 
     public Album() {

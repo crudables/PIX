@@ -6,11 +6,13 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
 
 /**
  *
  * @author Ables
  */
+@Entity
 public class Comment implements  Serializable{
     
     private Integer id;
