@@ -8,12 +8,22 @@ package model;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author Ables
  */
+@Entity
+@NamedQueries({@NamedQuery(name = "retrievePicture",query = "delete  from Picture p where a.id = ?1")})
 public class Picture implements Serializable{
+    
+    @Id
+    @GeneratedValue
     private Integer id;
     private String name;
     private String description;
