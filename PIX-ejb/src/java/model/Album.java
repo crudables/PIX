@@ -30,6 +30,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  *
  * @author Ables
  */
+
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorValue("ALBUM")
