@@ -28,7 +28,7 @@ public interface PersistenceService {
     
     public void deletePicture(Picture picture);
     
-    public uploadStatus storePicture(PictureUpload picture);
+//    public uploadStatus storePicture(PictureUpload picture);
     
     public void rotatePictureRight(Picture picture);
     
@@ -46,6 +46,6 @@ public interface PersistenceService {
     
     public void removePictureFromAlbum(Integer id);
     
-    public Picture retrievePictureById(Integer id);
+//    public Picture retrievePictureById(Integer id);
     
 }

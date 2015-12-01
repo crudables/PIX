@@ -52,10 +52,10 @@ public class PersistenceImpl implements PersistenceService{
         
     }
 
-    @Override
-    public uploadStatus storePicture(PictureUpload picture) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    @Override
+//    public uploadStatus storePicture(PictureUpload picture) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     @Override
     public void rotatePictureRight(Picture picture) {
@@ -100,6 +100,11 @@ public class PersistenceImpl implements PersistenceService{
         Query query = entityManager.createNamedQuery("deletePicture");
         query.setParameter(1, id);
         query.executeUpdate();
+    }
+
+    @Override
+    public uploadStatus storePicture(PictureUpload picture) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
