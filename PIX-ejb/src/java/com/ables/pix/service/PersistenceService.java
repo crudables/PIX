@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 
-package service;
+package com.ables.pix.service;
 
 import java.util.List;
-import model.Album;
-import model.Picture;
-import model.PixUser;
+import com.ables.pix.model.Album;
+import com.ables.pix.model.Picture;
+import com.ables.pix.model.PixUser;
+import com.ables.pix.utility.PictureUpload;
 
 /**
  *
@@ -28,11 +29,11 @@ public interface PersistenceService {
     
     public void deletePicture(Picture picture);
     
-//    public uploadStatus storePicture(PictureUpload picture);
+    public uploadStatus storePicture(PictureUpload picture);
     
-    public void rotatePictureRight(Picture picture);
-    
-    public void rotatePictureLeft(Picture picture);
+//    public void rotatePictureRight(Picture picture);
+//    
+//    public void rotatePictureLeft(Picture picture);
     
     public Album retrieveAlbumById(Integer id);
     

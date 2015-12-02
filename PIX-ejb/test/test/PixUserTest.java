@@ -6,7 +6,7 @@
 package test;
 
 import junit.framework.TestCase;
-import model.PixUser;
+import com.ables.pix.model.PixUser;
 
 /**
  *

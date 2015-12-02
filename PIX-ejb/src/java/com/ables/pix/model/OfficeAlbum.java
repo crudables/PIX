@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package com.ables.pix.model;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -13,13 +13,13 @@ import javax.persistence.Entity;
  * @author Ables
  */
 @Entity
-@DiscriminatorValue("HOLIDAY")
-public class HolidayAlbum extends Album{
+@DiscriminatorValue("OFFICE")
+public class OfficeAlbum extends Album{
 
-    public HolidayAlbum() {
+    public OfficeAlbum() {
     }
 
-    public HolidayAlbum(String name) {
+    public OfficeAlbum(String name) {
         super(name);
     }
     

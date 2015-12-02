@@ -4,15 +4,16 @@
  * and open the template in the editor.
  */
 
-package service;
+package com.ables.pix.service;
 
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import model.Album;
-import model.Picture;
-import model.PixUser;
+import com.ables.pix.model.Album;
+import com.ables.pix.model.Picture;
+import com.ables.pix.model.PixUser;
+import com.ables.pix.utility.PictureUpload;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -57,15 +58,15 @@ public class PersistenceImpl implements PersistenceService{
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
 
-    @Override
-    public void rotatePictureRight(Picture picture) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void rotatePictureLeft(Picture picture) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    @Override
+//    public void rotatePictureRight(Picture picture) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    @Override
+//    public void rotatePictureLeft(Picture picture) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     @Override
     public Album retrieveAlbumById(Integer id) {
