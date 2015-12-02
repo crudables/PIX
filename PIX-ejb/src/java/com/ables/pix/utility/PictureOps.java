@@ -26,6 +26,14 @@ import org.springframework.core.io.ResourceLoader;
  * @author ables
  */
 public class PictureOps {
+
+    public String getRepositoryRoot() {
+        return repositoryRoot;
+    }
+
+    public void setRepositoryRoot(String repositoryRoot) {
+        this.repositoryRoot = repositoryRoot;
+    }
     public enum UploadStatus{
     SUCCESS,EXISTS,INVALID, FAILED
     }
@@ -160,5 +168,21 @@ public class PictureOps {
             return UploadStatus.FAILED;
             }
             }
+            
+            
+		// Get a reference to the picture object to populate with data coming
+		// from the file.
+                Picture picture = upload.getPicture();
+                if(picture == null){
+                picture = new Picture();
+                upload.setPicture(picture);
+                }
+              picture.setFileName(fileName);
+              picture.setPath(path);
+              picture.setSize(upload.getUpload().getSize());
+              
+              return UploadStatus.SUCCESS;
+              
         }
+        
 }
